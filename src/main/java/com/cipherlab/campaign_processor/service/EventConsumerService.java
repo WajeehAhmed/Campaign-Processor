@@ -62,7 +62,7 @@ public class EventConsumerService {
                     .eventType(message.getEventType())
                     .build();
             // SIMULATE PRODUCTION BOTTLENECK: Freeze the thread for 2 seconds
-                Thread.sleep(2000);
+            //    Thread.sleep(2000);
             rawEventRepository.save(rawEvent);
             // 2. Compute inline increments
             long impressions = "IMPRESSION".equalsIgnoreCase(message.getEventType()) ? 1L : 0L;
